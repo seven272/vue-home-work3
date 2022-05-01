@@ -1,6 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import router from '@/router/index.js'
+import store from '@/store/index.js'
+import './theme.css'
+import AppButton from '@/components/AppButton.vue'
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+app.use(store).use(router).mount('#app')
+app.component('app-button', AppButton)
